@@ -1,0 +1,10 @@
+@import '@/shared/ui/color';
+
+.btn {
+  @apply bg-[#{$bg-button-color}];
+  @apply text-white font-bold uppercase;
+  @apply w-2/3 rounded-full;
+  @apply py-4 mx-auto;
+
+  @apply hover:bg-[#{$bg-button-color__hover}]
+}

@@ -1,0 +1,9 @@
+.messages {
+  @apply w-full h-full;
+  @apply rounded-[32px_32px_0_0];
+  @apply p-4;
+  background-color: rgba(255,255,255, 0.1);
+
+  @apply flex flex-col;
+  @apply space-y-4;
+}

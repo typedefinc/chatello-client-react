@@ -1,0 +1,28 @@
+@import "@/shared/ui/color";
+
+.wrapper {
+  @apply relative;
+
+  .input {
+    @apply w-full h-[52px];
+    @apply outline-none rounded-xl;
+    @apply text-gray-400;
+    @apply p-1 pl-10 text-sm;
+    @apply bg-[#{$bg-default-color}];
+
+    &:focus {
+      @apply bg-[#{$bg-light-color}]
+    }
+
+    &::placeholder {
+      @apply uppercase;
+    }
+  }
+
+  .icon {
+    @apply absolute;
+    @apply left-2 top-1/2 -translate-y-1/2;
+  }
+}
+
+

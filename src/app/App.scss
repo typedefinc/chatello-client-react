@@ -1,0 +1,35 @@
+@import "@/shared/ui/color";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  color: white;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  font-family: Inter, sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 52px $bg-default-color;
+}
+
+#root {
+  @apply w-[100vw] h-[100vh];
+  @apply bg-[#{$bg-default-color}];
+
+  @apply overflow-hidden;
+}

@@ -1,0 +1,12 @@
+@import '@/shared/ui/color';
+
+.inline_btn {
+  @apply text-sm;
+  @apply text-[#{$inline-text-color}];
+
+  @apply hover:text-white;
+}
+
+.bold {
+  @apply font-bold;
+}

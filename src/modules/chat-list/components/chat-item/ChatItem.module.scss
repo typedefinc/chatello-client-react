@@ -1,0 +1,14 @@
+.item {
+  @apply w-full h-14;
+
+  @apply flex items-center;
+  @apply text-lg font-semibold;
+
+  .avatar {
+    @apply flex items-center justify-center;
+    @apply w-12 h-12;
+    @apply mr-4;
+    @apply bg-gray-500;
+    @apply rounded-full;
+  }
+}

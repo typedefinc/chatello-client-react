@@ -1,0 +1,16 @@
+.wrapper {
+  @apply flex flex-col;
+  @apply w-full h-full;
+  @apply flex items-center;
+
+  .form {
+    @apply flex flex-col;
+    @apply space-y-2 w-full sm:w-1/2 max-w-[450px];
+
+    .inputs {
+      @apply flex flex-col;
+      @apply space-y-4;
+      @apply mb-8;
+    }
+  }
+}

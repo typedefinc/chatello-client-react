@@ -1,0 +1,34 @@
+.wrapper {
+  @apply flex flex-col items-center;
+  @apply w-full h-full;
+  @apply space-y-12 p-4;
+
+  .logo {
+    @apply flex justify-center 2xl:justify-start;
+    @apply w-full 2xl:w-1/2;
+
+    img {
+      @apply w-2/3 md:w-[400px];
+    }
+  }
+
+  .header {
+    @apply w-full 2xl:w-1/2 mb-4;
+    @apply px-4;
+
+    .title {
+      @apply text-[32px] font-bold;
+      @apply mb-2;
+    }
+  }
+
+  .description {
+    @apply text-sm;
+    @apply text-gray-500;
+  }
+
+  .signup_link {
+    @apply flex justify-center items-center;
+    @apply w-full py-4 space-x-2;
+  }
+}

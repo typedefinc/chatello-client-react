@@ -1,0 +1,47 @@
+.notification {
+  @apply w-[95vw] md:w-auto;
+  @apply px-4 py-2 rounded-md;
+  @apply flex items-center space-x-2;
+  @apply font-semibold text-sm;
+  @apply mt-2 transition-opacity;
+
+  animation: open .5s ease-in-out;
+}
+
+.error {
+  @apply bg-red-200;
+
+  .text {
+    @apply text-red-600;
+  }
+}
+.warning {
+  @apply bg-orange-200;
+
+  .text {
+    @apply text-orange-600;
+  }
+}
+.info {
+  @apply bg-blue-200;
+
+  .text {
+    @apply text-blue-600;
+  }
+}
+.success {
+  @apply bg-green-200;
+
+  .text {
+    @apply text-green-600;
+  }
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

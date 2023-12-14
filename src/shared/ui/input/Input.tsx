@@ -7,7 +7,7 @@ type Props = {
   placeholder: string,
   name: string,
   value: string,
-  onChange: ChangeEventHandler<HTMLInputElement>,
+  onChange?: ChangeEventHandler<HTMLInputElement>,
 }
 
 const Input: FC<PropsWithChildren<Props>> = ({ type, label, placeholder, children, name, value, onChange }): ReactNode => {

@@ -1,10 +1,25 @@
-import LoginForm from "@/modules/auth/components/login/LoginForm.tsx";
-import styles from "./Login.module.scss";
-import { FC } from "react";
+import styles from "./LoginPage.module.scss";
+import { FC, useEffect } from "react";
 import InlineButton from "@/shared/ui/inline-button/InlineButton.tsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Login from "@/modules/auth/components/login/Login.tsx";
+import useAuth from "@/hooks/useAuth.ts";
+import useNotification from "@/hooks/useNotification.ts";
+import { NotificationTypeEnum } from "@/modules/notifications/store/notificationSlice.ts";
 
-const Login: FC = () => {
+const LoginPage: FC = () => {
+  const navigate = useNavigate();
+  const [, pushNotification] = useNotification();
+  const { isAuth } = useAuth();
+
+
+  useEffect(() => {
+    if (isAuth) {
+      pushNotification(NotificationTypeEnum.INFO, 'You are already logged in.');
+      navigate('/');
+    }
+  }, []);
+
   return (
     <div className={ styles.wrapper }>
       <div
@@ -25,7 +40,7 @@ const Login: FC = () => {
         </h3>
       </div>
 
-      <LoginForm />
+      <Login />
 
       <div className={ styles.signup_link }>
         <span className={ styles.description }>
@@ -40,7 +55,7 @@ const Login: FC = () => {
         </InlineButton>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login;
+export default LoginPage;

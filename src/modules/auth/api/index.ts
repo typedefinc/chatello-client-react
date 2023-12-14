@@ -1,25 +1,20 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { RootState } from '@/shared/store';
+import { baseApi } from "@/shared/api";
 
-export type LoginDto = {
+export type LoginDtoType = {
   email: string,
   password: string,
 }
 
-export const authApi = createApi({
-  reducerPath: 'auth',
-  baseQuery: fetchBaseQuery({
-    baseUrl: `${import.meta.env.VITE_BASE_URL}/auth`,
-    prepareHeaders: (headers) => {
-      headers.set('Authorization', 'Bearer ')
+export type TokensDtoType = {
+  accessToken: string,
+  refreshToken: string,
+}
 
-      return headers;
-    }
-  }),
-  endpoints: builder => ({
-    login: builder.mutation({
-      query: (body) => ({
-        url: 'login',
+export const authApi = baseApi.injectEndpoints({
+  endpoints: (build) => ({
+    login: build.mutation<TokensDtoType, LoginDtoType>({
+      query: (body: LoginDtoType) => ({
+        url: '/auth/login',
         method: 'POST',
         body,
       })
@@ -28,3 +23,4 @@ export const authApi = createApi({
 });
 
 export const { useLoginMutation } = authApi;
+
